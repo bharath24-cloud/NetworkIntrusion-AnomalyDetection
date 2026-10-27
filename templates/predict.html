@@ -1,0 +1,336 @@
+{% extends "base.html" %}
+
+{% block title %}Batch CSV Prediction - Dual-Engine NIDS{% endblock %}
+
+{% block content %}
+<div class="page-header d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+    <div>
+        <h1 class="page-title">Batch CSV Prediction & Anomaly Scoring</h1>
+        <p class="page-subtitle mb-0">Upload network flow records for real-time feature preprocessing, Random Forest classification, and PyTorch Autoencoder anomaly scoring</p>
+    </div>
+</div>
+
+<!-- Upload & Sample Selection Cards -->
+<div class="row g-4 mb-4">
+    <div class="col-lg-8">
+        <div class="card-custom h-100">
+            <div class="card-header-custom d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-file-earmark-arrow-up text-primary me-2"></i>Upload Network Traffic CSV</span>
+                <span class="badge bg-light text-dark border">Supports full UNSW-NB15 files (up to 64 MB)</span>
+            </div>
+            <div class="card-body p-4">
+                <form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data" id="upload-form">
+                    <div class="upload-zone mb-3 p-4 text-center rounded border border-2 border-dashed" id="drop-zone" style="cursor: pointer; transition: all 0.2s ease;">
+                        <i class="bi bi-cloud-arrow-up text-primary display-4 d-block mb-2"></i>
+                        <h6 class="fw-semibold mb-1" id="file-label-text">Choose a CSV file or drag and drop here</h6>
+                        <p class="text-muted small mb-0">Standard UNSW-NB15 features (proto, service, state, sbytes, dbytes, rate, dur, etc.)</p>
+                        <input type="file" name="file" id="file-input" class="d-none" accept=".csv" onchange="updateFileName(this)">
+                    </div>
+
+                    <!-- Progress / Loading Indicator (Shown when uploading) -->
+                    <div id="upload-progress-container" class="mb-3 p-3 bg-light border rounded" style="display: none;">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <span class="fw-semibold text-primary">
+                                <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                                <span id="progress-status-text">Uploading CSV & running dual-model inference...</span>
+                            </span>
+                            <small class="text-muted">Please wait</small>
+                        </div>
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 100%;"></div>
+                        </div>
+                        <small class="text-muted mt-2 d-block">
+                            <i class="bi bi-info-circle me-1"></i> Preprocessing features, executing Random Forest classification, and computing Autoencoder reconstruction errors across all records.
+                        </small>
+                    </div>
+
+                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+                        <span id="selected-filename" class="small text-muted fst-italic">No file chosen yet</span>
+                        <button type="submit" class="btn btn-primary px-4 py-2" id="btn-submit">
+                            <i class="bi bi-shield-check me-1"></i> Preprocess & Run Predictions
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Load Sample Option -->
+    <div class="col-lg-4">
+        <div class="card-custom h-100">
+            <div class="card-header-custom d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-lightning-charge text-warning me-2"></i>Instant Test Sample</span>
+                <span class="badge bg-warning-subtle text-warning-emphasis">One-Click</span>
+            </div>
+            <div class="card-body p-4 d-flex flex-column justify-content-between">
+                <div>
+                    <h6 class="fw-bold mb-2">No CSV file on hand?</h6>
+                    <p class="small text-muted mb-3">
+                        Load 50 randomly sampled network flows directly from the holdout benchmark dataset (<code>data/sample_testing-set.csv</code>) to test inference instantly without selecting a file.
+                    </p>
+                </div>
+                <form action="{{ url_for('predict_sample') }}" method="POST" id="sample-form">
+                    <button type="submit" class="btn btn-outline-primary w-100 py-2" id="btn-sample">
+                        <i class="bi bi-database-check me-1"></i> Load 50 Test Flows Demo
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if results %}
+<!-- Prediction Results Section -->
+<div class="row g-3 mb-4">
+    <div class="col-sm-6 col-xl-{{ '2' if summary.gt_stats else '3' }}">
+        <div class="stat-card blue">
+            <div class="stat-title">Total Records Scored</div>
+            <div class="stat-value text-primary">{{ "{:,}".format(summary.total) }}</div>
+            <div class="stat-subtext">Processed in {{ summary.elapsed_time }}s</div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-{{ '3' if summary.gt_stats else '3' }}">
+        <div class="stat-card red">
+            <div class="stat-title">Random Forest Attacks</div>
+            <div class="stat-value text-danger">{{ "{:,}".format(summary.rf_attacks) }}</div>
+            <div class="stat-subtext">{{ summary.attack_rate }}% of batch classified as attack</div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-{{ '2' if summary.gt_stats else '3' }}">
+        <div class="stat-card amber">
+            <div class="stat-title">Autoencoder Anomalies</div>
+            <div class="stat-value text-warning">{{ "{:,}".format(summary.ae_anomalies) }}</div>
+            <div class="stat-subtext">Error &gt; {{ "%.4f"|format(ae_threshold) }}</div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-{{ '2' if summary.gt_stats else '3' }}">
+        <div class="stat-card green">
+            <div class="stat-title">Critical Consensus</div>
+            <div class="stat-value text-success">{{ "{:,}".format(summary.critical_count) }}</div>
+            <div class="stat-subtext">Both RF & Autoencoder flagged</div>
+        </div>
+    </div>
+    {% if summary.gt_stats %}
+    <div class="col-sm-6 col-xl-3">
+        <div class="stat-card green">
+            <div class="stat-title">Ground Truth Agreement</div>
+            <div class="stat-value text-success">{{ summary.gt_stats.accuracy }}%</div>
+            <div class="stat-subtext">{{ "{:,}".format(summary.gt_stats.matches) }} / {{ "{:,}".format(summary.total) }} labels matched</div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<!-- Results Table Card -->
+<div class="card-custom">
+    <div class="card-header-custom flex-wrap gap-2 d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center gap-2">
+            <span><i class="bi bi-table text-primary me-2"></i>Prediction Results</span>
+            <span class="badge bg-light text-dark border">
+                Showing {{ results|length }} of {{ "{:,}".format(summary.total) }} Records
+            </span>
+            {% if summary.is_truncated %}
+            <span class="badge bg-info-subtle text-info-emphasis border border-info-subtle">
+                <i class="bi bi-info-circle me-1"></i> Top {{ summary.display_limit }} Preview
+            </span>
+            {% endif %}
+        </div>
+        <div class="d-flex align-items-center gap-2">
+            <!-- Filter buttons -->
+            <div class="btn-group btn-group-sm" role="group">
+                <button type="button" class="btn btn-outline-secondary active" onclick="filterTable('ALL', this)">All</button>
+                <button type="button" class="btn btn-outline-danger" onclick="filterTable('ATTACK', this)">Attacks Only</button>
+                <button type="button" class="btn btn-outline-success" onclick="filterTable('NORMAL', this)">Normal Only</button>
+            </div>
+            <!-- Download Button -->
+            <a href="{{ url_for('download_predictions') }}" class="btn btn-success btn-sm px-3">
+                <i class="bi bi-download me-1"></i> Download Full CSV ({{ "{:,}".format(summary.total) }} Rows)
+            </a>
+        </div>
+    </div>
+
+    {% if summary.is_truncated %}
+    <div class="bg-light px-3 py-2 border-bottom small text-muted d-flex align-items-center gap-2">
+        <i class="bi bi-info-circle-fill text-primary"></i>
+        <span>
+            Displaying the first <strong>{{ summary.display_limit }} records</strong> in the interactive table below to optimize browser responsiveness. 
+            All <strong>{{ "{:,}".format(summary.total) }} records</strong> have been evaluated and are included in the downloadable CSV.
+        </span>
+    </div>
+    {% endif %}
+
+    <div class="card-body p-0">
+        <div class="table-responsive" style="max-height: 540px;">
+            <table class="table table-hover align-middle mb-0" id="predictions-table">
+                <thead class="table-light sticky-top">
+                    <tr>
+                        <th>#</th>
+                        <th>Proto</th>
+                        <th>Service</th>
+                        <th>State</th>
+                        <th>Duration</th>
+                        <th>S-Bytes</th>
+                        <th>Random Forest Prediction</th>
+                        <th>RF Attack Prob</th>
+                        <th>AE Recon Error</th>
+                        <th>Threat Consensus</th>
+                        {% if has_ground_truth %}
+                        <th>Ground Truth</th>
+                        {% endif %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in results %}
+                    <tr class="prediction-row" data-threat="{{ 'ATTACK' if r.rf_pred == 1 else 'NORMAL' }}">
+                        <td><strong>{{ r.id }}</strong></td>
+                        <td><span class="badge bg-light text-dark border">{{ r.proto }}</span></td>
+                        <td>{{ r.service }}</td>
+                        <td>{{ r.state }}</td>
+                        <td>{{ "%.4f"|format(r.dur) }}s</td>
+                        <td>{{ r.sbytes }}</td>
+                        <td>
+                            <span class="badge {{ 'bg-danger' if r.rf_pred == 1 else 'bg-success' }}">
+                                {{ "Attack" if r.rf_pred == 1 else "Normal" }}
+                            </span>
+                        </td>
+                        <td style="width: 140px;">
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="progress flex-grow-1" style="height: 6px;">
+                                    <div class="progress-bar {{ 'bg-danger' if r.rf_prob >= 0.5 else 'bg-success' }}" 
+                                         role="progressbar" style="width: {{ r.rf_prob * 100 }}%;"></div>
+                                </div>
+                                <small class="text-muted fw-semibold">{{ "%.1f"|format(r.rf_prob * 100) }}%</small>
+                            </div>
+                        </td>
+                        <td><code>{{ "%.4f"|format(r.ae_score) }}</code></td>
+                        <td>
+                            {% if r.threat_level == 'CRITICAL INTRUSION' %}
+                                <span class="badge-threat-critical">🔴 CRITICAL INTRUSION</span>
+                            {% elif r.threat_level == 'SUSPICIOUS' %}
+                                <span class="badge-threat-suspicious">🟡 SUSPICIOUS</span>
+                            {% else %}
+                                <span class="badge-threat-normal">🟢 NORMAL</span>
+                            {% endif %}
+                        </td>
+                        {% if has_ground_truth %}
+                        <td>
+                            <span class="{{ 'text-danger fw-semibold' if r.ground_truth == 1 else 'text-success' }}">
+                                {{ "Attack" if r.ground_truth == 1 else "Normal" }}
+                            </span>
+                            {% if r.attack_cat %}
+                                <small class="text-muted">({{ r.attack_cat }})</small>
+                            {% endif %}
+                        </td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function updateFileName(input) {
+        if (input.files && input.files[0]) {
+            const file = input.files[0];
+            const sizeKB = (file.size / 1024).toFixed(1);
+            const sizeMB = (file.size / (1024 * 1024)).toFixed(2);
+            const sizeStr = file.size > 1024 * 1024 ? `${sizeMB} MB` : `${sizeKB} KB`;
+            
+            document.getElementById('selected-filename').innerHTML = 
+                `<strong class="text-primary">${file.name}</strong> (${sizeStr})`;
+            document.getElementById('file-label-text').textContent = file.name;
+        }
+    }
+
+    // Drag-and-Drop Event Listeners
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+
+    if (dropZone && fileInput) {
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropZone.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                dropZone.classList.add('border-primary', 'bg-light');
+            }, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                dropZone.classList.remove('border-primary', 'bg-light');
+            }, false);
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            if (files && files.length > 0) {
+                fileInput.files = files;
+                updateFileName(fileInput);
+            }
+        }, false);
+
+        dropZone.addEventListener('click', () => {
+            fileInput.click();
+        });
+    }
+
+    // Form Submission: prevent duplicate clicks and show progress indicator
+    const uploadForm = document.getElementById('upload-form');
+    if (uploadForm) {
+        uploadForm.addEventListener('submit', function(e) {
+            if (!fileInput.files || fileInput.files.length === 0) {
+                e.preventDefault();
+                alert('Please select a valid CSV file before submitting.');
+                return false;
+            }
+
+            const btn = document.getElementById('btn-submit');
+            if (btn) {
+                btn.disabled = true;
+                btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Processing...';
+            }
+
+            const progressContainer = document.getElementById('upload-progress-container');
+            if (progressContainer) {
+                progressContainer.style.display = 'block';
+            }
+        });
+    }
+
+    // Sample form submit indicator
+    const sampleForm = document.getElementById('sample-form');
+    if (sampleForm) {
+        sampleForm.addEventListener('submit', function() {
+            const btn = document.getElementById('btn-sample');
+            if (btn) {
+                btn.disabled = true;
+                btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Loading 50 flows...';
+            }
+        });
+    }
+
+    // Table Filtering
+    function filterTable(filter, btn) {
+        const buttons = btn.parentElement.querySelectorAll('button');
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const rows = document.querySelectorAll('.prediction-row');
+        rows.forEach(r => {
+            if (filter === 'ALL' || r.getAttribute('data-threat') === filter) {
+                r.style.display = '';
+            } else {
+                r.style.display = 'none';
+            }
+        });
+    }
+</script>
+{% endblock %}

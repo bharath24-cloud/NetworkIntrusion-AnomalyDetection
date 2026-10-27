@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+
+{% block title %}Dataset Stream Replay Simulation - NIDS SOC{% endblock %}
+
+{% block content %}
+<div class="page-header d-flex flex-wrap align-items-center justify-content-between gap-3">
+    <div>
+        <h1 class="page-title">Dataset-Based Stream Replay Simulation</h1>
+        <p class="page-subtitle mb-0">Simulates real-time line-rate intrusion monitoring by replaying UNSW-NB15 holdout test flows</p>
+    </div>
+</div>
+
+<!-- Prominent Required Disclaimer Banner -->
+<div class="replay-banner shadow-sm">
+    <i class="bi bi-info-circle-fill fs-4 text-primary"></i>
+    <div>
+        <strong>System Architecture Notice:</strong> This demonstration is a <strong>dataset-based stream replay simulation</strong>. 
+        It sequentially feeds holdout test records from the benchmark dataset into our zero-leakage preprocessor and dual-model inference engines 
+        at configurable millisecond intervals. <u>It does not sniff live physical network interfaces or execute raw packet capture.</u>
+    </div>
+</div>
+
+<!-- Control Panel Card -->
+<div class="card-custom mb-4">
+    <div class="card-header-custom">
+        <div class="d-flex align-items-center gap-2">
+            <span class="pulse-dot paused" id="status-indicator"></span>
+            <span class="fw-bold" id="status-text">Replay ready (Paused)</span>
+        </div>
+        <span class="badge bg-light text-dark border">
+            <i class="bi bi-shield-check text-primary me-1"></i> Dual-Engine Live Scoring
+        </span>
+    </div>
+    <div class="card-body p-3">
+        <div class="row g-3 align-items-center">
+            <!-- Action Buttons -->
+            <div class="col-md-5">
+                <div class="btn-group w-100" role="group">
+                    <button type="button" class="btn btn-primary" id="btn-start-replay">
+                        <i class="bi bi-play-fill me-1"></i> Start Replay
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary" id="btn-pause-replay" disabled>
+                        <i class="bi bi-pause-fill me-1"></i> Pause
+                    </button>
+                    <button type="button" class="btn btn-outline-info" id="btn-step-replay">
+                        <i class="bi bi-skip-forward-fill me-1"></i> Step
+                    </button>
+                    <button type="button" class="btn btn-outline-danger" id="btn-reset-replay">
+                        <i class="bi bi-arrow-counterclockwise me-1"></i> Reset
+                    </button>
+                </div>
+            </div>
+
+            <!-- Latency Slider -->
+            <div class="col-md-4">
+                <label for="slider-delay" class="form-label small text-muted d-flex justify-content-between mb-1">
+                    <span><i class="bi bi-speedometer2 me-1"></i> Replay Delay (Speed):</span>
+                    <strong id="val-delay" class="text-primary">500 ms</strong>
+                </label>
+                <input type="range" class="form-range" id="slider-delay" min="100" max="2000" step="100" value="500">
+            </div>
+
+            <!-- Batch Size -->
+            <div class="col-md-3">
+                <label for="select-batch-size" class="form-label small text-muted mb-1">
+                    <i class="bi bi-layers me-1"></i> Batch Step Size:
+                </label>
+                <select class="form-select form-select-sm" id="select-batch-size">
+                    <option value="1" selected>1 flow / tick (Smooth stream)</option>
+                    <option value="2">2 flows / tick</option>
+                    <option value="5">5 flows / tick</option>
+                    <option value="10">10 flows / tick (High velocity)</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Live Running Counters / KPIs -->
+<div class="row g-3 mb-4">
+    <div class="col-sm-6 col-xl-2">
+        <div class="stat-card blue">
+            <div class="stat-title">Flows Processed</div>
+            <div class="stat-value text-primary" id="lbl-processed">0</div>
+            <div class="stat-subtext">Holdout records streamed</div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-2">
+        <div class="stat-card green">
+            <div class="stat-title">Normal Traffic</div>
+            <div class="stat-value text-success" id="lbl-normal">0</div>
+            <div class="stat-subtext">Benign connections</div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-3">
+        <div class="stat-card red">
+            <div class="stat-title">Intrusion Alerts</div>
+            <div class="stat-value text-danger" id="lbl-attack">0</div>
+            <div class="stat-subtext">Flagged by Random Forest</div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-3">
+        <div class="stat-card amber">
+            <div class="stat-title">Critical Threats</div>
+            <div class="stat-value text-warning" id="lbl-critical">0</div>
+            <div class="stat-subtext">Both RF & Autoencoder triggered</div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-2">
+        <div class="stat-card blue">
+            <div class="stat-title">Attack Rate</div>
+            <div class="stat-value text-dark" id="lbl-rate">0.0%</div>
+            <div class="stat-subtext">Malicious ratio</div>
+        </div>
+    </div>
+</div>
+
+<!-- Real-time Anomaly Timeline Chart -->
+<div class="card-custom mb-4">
+    <div class="card-header-custom">
+        <span><i class="bi bi-activity text-primary me-2"></i>Real-Time Autoencoder Reconstruction Error (MSE) Timeline</span>
+        <span class="badge bg-danger-subtle text-danger border border-danger-subtle">
+            Cutoff Threshold: {{ "%.4f"|format(ae_threshold) }}
+        </span>
+    </div>
+    <div class="card-body p-3">
+        <div style="height: 220px; width: 100%;">
+            <canvas id="timelineChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<!-- Live Packet Stream Feed Table -->
+<div class="card-custom">
+    <div class="card-header-custom">
+        <div class="d-flex align-items-center gap-2">
+            <span><i class="bi bi-reception-4 text-success me-2"></i>Live Stream Feed Table</span>
+            <small class="text-muted">(Newest flows appear at top • Max 25 in buffer)</small>
+        </div>
+    </div>
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0 live-stream-table">
+                <thead class="table-light">
+                    <tr>
+                        <th>Sequence</th>
+                        <th>Simulated Time</th>
+                        <th>Proto</th>
+                        <th>Service</th>
+                        <th>S-Bytes</th>
+                        <th>RF Prediction</th>
+                        <th>AE Recon MSE</th>
+                        <th>Alert Level</th>
+                        <th>Ground Truth</th>
+                    </tr>
+                </thead>
+                <tbody id="replay-feed-body">
+                    <tr>
+                        <td colspan="9" class="text-center py-4 text-muted">
+                            <i class="bi bi-play-circle display-6 d-block mb-2 text-primary opacity-50"></i>
+                            Click <strong>Start Replay</strong> above to begin streaming holdout test flows.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Pass threshold from Flask template to replay.js
+    window.AE_THRESHOLD = {{ ae_threshold }};
+</script>
+<script src="{{ url_for('static', filename='js/replay.js') }}"></script>
+{% endblock %}

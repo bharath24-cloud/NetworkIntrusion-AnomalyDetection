@@ -1,0 +1,261 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Model Metrics & Performance{% endblock %}
+
+{% block content %}
+<div class="page-header d-flex flex-wrap align-items-center justify-content-between gap-3">
+    <div>
+        <h1 class="page-title">Dual-Engine Model Metrics & Comparative Evaluation</h1>
+        <p class="page-subtitle mb-0">Pre-trained models loaded from <code>models/saved/</code> • Evaluated on UNSW-NB15 holdout benchmark</p>
+    </div>
+    <div>
+        <a href="{{ url_for('predict') }}" class="btn btn-outline-primary btn-sm me-2">
+            <i class="bi bi-upload me-1"></i> Predict on CSV
+        </a>
+        <a href="{{ url_for('replay') }}" class="btn btn-primary btn-sm">
+            <i class="bi bi-play-circle-fill me-1"></i> Dataset Replay Demo
+        </a>
+    </div>
+</div>
+
+<!-- Stat KPI Cards -->
+<div class="row g-3 mb-4">
+    <div class="col-sm-6 col-xl-3">
+        <div class="stat-card blue">
+            <div class="stat-title">Random Forest Recall</div>
+            <div class="stat-value text-primary">{{ "%.2f"|format(rf.recall * 100) }}%</div>
+            <div class="stat-subtext">Detection rate on cyber attacks (TP: {{ rf.confusion_matrix.tp }})</div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-3">
+        <div class="stat-card green">
+            <div class="stat-title">Random Forest F1-Score</div>
+            <div class="stat-value text-success">{{ "%.4f"|format(rf.f1_score) }}</div>
+            <div class="stat-subtext">Precision: {{ "%.2f"|format(rf.precision * 100) }}% | ROC-AUC: {{ rf.roc_auc }}</div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-3">
+        <div class="stat-card amber">
+            <div class="stat-title">Autoencoder Specificity</div>
+            <div class="stat-value text-warning">{{ "%.2f"|format(ae.specificity * 100) }}%</div>
+            <div class="stat-subtext">Benign traffic accuracy (TN: {{ ae.confusion_matrix.tn }})</div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-3">
+        <div class="stat-card red">
+            <div class="stat-title">AE False Positive Rate</div>
+            <div class="stat-value text-danger">{{ "%.2f"|format(ae.false_positive_rate * 100) }}%</div>
+            <div class="stat-subtext">Calibrated Cutoff Threshold: <code>{{ "%.4f"|format(metadata.ae_threshold) }}</code></div>
+        </div>
+    </div>
+</div>
+
+<!-- Side-by-side Comparison & Confusion Matrices -->
+<div class="row g-4 mb-4">
+    <!-- Comparison Table -->
+    <div class="col-lg-7">
+        <div class="card-custom h-100">
+            <div class="card-header-custom">
+                <span><i class="bi bi-table me-2 text-primary"></i>Comparative Model Performance Summary</span>
+                <span class="badge bg-light text-dark border">{{ metadata.test_samples }} Holdout Test Records</span>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Evaluation Dimension</th>
+                                <th>Random Forest (Supervised)</th>
+                                <th>Deep Autoencoder (Semi-Supervised)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="fw-semibold">Learning Paradigm</td>
+                                <td><span class="badge bg-primary-subtle text-primary">Supervised (0 & 1)</span></td>
+                                <td><span class="badge bg-warning-subtle text-warning-emphasis">Normal Only (Unsupervised)</span></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-semibold">Primary Target Objective</td>
+                                <td>Known Intrusion Signatures</td>
+                                <td>Statistical Anomalies & Novel Attacks</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-semibold">Precision (Alert Reliability)</td>
+                                <td class="fw-bold text-success">{{ "%.4f"|format(rf.precision) }}</td>
+                                <td class="fw-bold text-success">{{ "%.4f"|format(ae.precision) }}</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-semibold">Recall (Attack Detection Rate)</td>
+                                <td class="fw-bold text-primary">{{ "%.4f"|format(rf.recall) }}</td>
+                                <td>{{ "%.4f"|format(ae.recall) }}</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-semibold">F1-Score (Harmonic Mean)</td>
+                                <td class="fw-bold">{{ "%.4f"|format(rf.f1_score) }}</td>
+                                <td>{{ "%.4f"|format(ae.f1_score) }}</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-semibold">Specificity (Benign Flow Retained)</td>
+                                <td>{{ "%.4f"|format(rf.specificity) }}</td>
+                                <td class="fw-bold text-warning-emphasis">{{ "%.4f"|format(ae.specificity) }}</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-semibold">False Positive Rate (FPR)</td>
+                                <td>{{ "%.4f"|format(rf.false_positive_rate) }}</td>
+                                <td class="fw-bold text-success">{{ "%.4f"|format(ae.false_positive_rate) }}</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-semibold">ROC-AUC Discriminative Power</td>
+                                <td class="fw-bold text-primary">{{ rf.roc_auc }}</td>
+                                <td>{{ ae.roc_auc }}</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-semibold">PR-AUC (Average Precision)</td>
+                                <td class="fw-bold text-primary">{{ rf.pr_auc }}</td>
+                                <td>{{ ae.pr_auc }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confusion Matrices -->
+    <div class="col-lg-5">
+        <div class="card-custom mb-3">
+            <div class="card-header-custom py-2">
+                <span><i class="bi bi-grid-3x3 me-2 text-primary"></i>Random Forest Confusion Matrix</span>
+                <span class="badge bg-primary">Accuracy: {{ "%.2f"|format(rf.accuracy * 100) }}%</span>
+            </div>
+            <div class="card-body p-3">
+                <table class="cm-table">
+                    <tr>
+                        <td class="cm-cell tn" style="width: 50%;">
+                            <div class="cm-val">{{ rf.confusion_matrix.tn }}</div>
+                            <div class="cm-label">True Negative (Normal)</div>
+                        </td>
+                        <td class="cm-cell fp" style="width: 50%;">
+                            <div class="cm-val">{{ rf.confusion_matrix.fp }}</div>
+                            <div class="cm-label">False Positive (False Alarm)</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cm-cell fn">
+                            <div class="cm-val">{{ rf.confusion_matrix.fn }}</div>
+                            <div class="cm-label">False Negative (Missed)</div>
+                        </td>
+                        <td class="cm-cell tp">
+                            <div class="cm-val">{{ rf.confusion_matrix.tp }}</div>
+                            <div class="cm-label">True Positive (Detected Attack)</div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="card-custom">
+            <div class="card-header-custom py-2">
+                <span><i class="bi bi-grid-3x3 me-2 text-warning"></i>Deep Autoencoder Confusion Matrix</span>
+                <span class="badge bg-warning text-dark">Cutoff: {{ "%.4f"|format(metadata.ae_threshold) }}</span>
+            </div>
+            <div class="card-body p-3">
+                <table class="cm-table">
+                    <tr>
+                        <td class="cm-cell tn" style="width: 50%;">
+                            <div class="cm-val">{{ ae.confusion_matrix.tn }}</div>
+                            <div class="cm-label">True Negative (Normal)</div>
+                        </td>
+                        <td class="cm-cell fp" style="width: 50%;">
+                            <div class="cm-val">{{ ae.confusion_matrix.fp }}</div>
+                            <div class="cm-label">False Positive (False Alarm)</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cm-cell fn">
+                            <div class="cm-val">{{ ae.confusion_matrix.fn }}</div>
+                            <div class="cm-label">False Negative (Missed)</div>
+                        </td>
+                        <td class="cm-cell tp">
+                            <div class="cm-val">{{ ae.confusion_matrix.tp }}</div>
+                            <div class="cm-label">True Positive (Anomalies)</div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Feature Importance & Class Imbalance Analysis -->
+<div class="row g-4">
+    <!-- Feature Importances -->
+    <div class="col-lg-6">
+        <div class="card-custom h-100">
+            <div class="card-header-custom">
+                <span><i class="bi bi-bar-chart-fill me-2 text-info"></i>Top 10 Most Predictive Features (Random Forest)</span>
+                <span class="badge bg-light text-dark border">Gini Importance</span>
+            </div>
+            <div class="card-body">
+                <canvas id="featuresChart" style="max-height: 280px;"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Class Imbalance Academic Context -->
+    <div class="col-lg-6">
+        <div class="card-custom h-100">
+            <div class="card-header-custom">
+                <span><i class="bi bi-mortarboard-fill me-2 text-primary"></i>Why Accuracy Alone is Misleading in NIDS</span>
+                <span class="badge bg-danger-subtle text-danger border border-danger-subtle">Security Theory</span>
+            </div>
+            <div class="card-body">
+                <div class="small text-muted mb-2">
+                    <p class="mb-2"><strong>1. The Accuracy Paradox:</strong> In operational enterprise networks, 95% to 99% of flows are benign. A trivial model predicting "Normal" 100% of the time achieves <strong>99% accuracy</strong> yet permits 100% of cyber attacks to breach the organization.</p>
+                    <p class="mb-2"><strong>2. False Alarms vs. Missed Breaches:</strong> Low precision causes <em>SOC Alert Fatigue</em> where analysts dismiss alarms. Low recall means stealthy cyber intrusions slip past the perimeter unnoticed.</p>
+                    <p class="mb-2"><strong>3. Sub-Category Skew in UNSW-NB15:</strong> Massive traffic volumes belong to 'Generic' or 'Exploits', while devastating attacks like 'Worms', 'Shellcode', and 'Backdoors' constitute less than 1% of flows.</p>
+                    <p class="mb-0"><strong>4. Consensus Defense:</strong> When both Random Forest and Autoencoder trigger an alert, confidence is maximized (<em>Critical Intrusion</em>).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Render Top Features Chart with Chart.js
+    const topFeatures = {{ top_features|tojson }};
+    if (topFeatures && topFeatures.length > 0) {
+        const labels = topFeatures.map(f => f[0]).slice(0, 10).reverse();
+        const values = topFeatures.map(f => f[1]).slice(0, 10).reverse();
+
+        const ctx = document.getElementById('featuresChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Feature Importance',
+                    data: values,
+                    backgroundColor: '#0284c7',
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: { beginAtZero: true, grid: { color: '#f1f5f9' } },
+                    y: { grid: { display: false } }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    }
+</script>
+{% endblock %}

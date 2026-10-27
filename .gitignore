@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.log
+data/*.csv
+!data/sample_testing-set.csv
+!data/sample_training-set.csv
+CSV Files/**/*.csv
+doc/~$*

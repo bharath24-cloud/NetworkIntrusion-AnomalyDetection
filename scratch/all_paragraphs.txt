@@ -1,0 +1,1074 @@
+--- P0 [Normal] (bold=False) ---
+ 
+
+--- P1 [Normal] (bold=False) ---
+ 
+
+--- P2 [Normal] (bold=True) ---
+Real-Time Network Intrusion and Anomaly Detection
+
+--- P3 [Normal] (bold=True) ---
+Using Machine Learning and Deep Learning
+
+--- P4 [Normal] (bold=False) ---
+ 
+
+--- P5 [Normal] (bold=True) ---
+ADA23CL302 – DATA MINING LABORATORY
+
+--- P6 [Normal] (bold=True) ---
+PROJECT REPORT
+
+--- P7 [Normal] (bold=False) ---
+ 
+
+--- P8 [Normal] (bold=False) ---
+ 
+
+--- P9 [Normal] (bold=False) ---
+Submitted by 
+
+--- P10 [Normal] (bold=False) ---
+ 
+
+--- P11 [Normal] (bold=False) ---
+Bharathram K - E0324006 
+
+--- P12 [Normal] (bold=False) ---
+ 
+
+--- P13 [Normal] (bold=False) ---
+ 
+
+--- P14 [Normal] (bold=False) ---
+In partial fulfilment for the award of the degree of 
+
+--- P15 [Normal] (bold=False) ---
+ 
+
+--- P16 [Normal] (bold=False) ---
+BACHELOR OF TECHNOLOGY 
+
+--- P17 [Normal] (bold=False) ---
+ in 
+
+--- P18 [Normal] (bold=False) ---
+ 
+
+--- P19 [Normal] (bold=False) ---
+COMPUTER SCIENCE AND ENGINEERING 
+
+--- P20 [Normal] (bold=False) ---
+ 
+
+--- P21 [Normal] (bold=False) ---
+(Artificial Intelligence and Data Analytics) 
+
+--- P22 [Normal] (bold=False) ---
+ 
+
+--- P23 [Normal] (bold=False) ---
+Sri Ramachandra Faculty of Engineering and Technology 
+
+--- P24 [Normal] (bold=False) ---
+ 
+
+--- P25 [Normal] (bold=False) ---
+Sri Ramachandra Institute of Higher Education and Research, Porur, Chennai -600116 
+
+--- P26 [Normal] (bold=False) ---
+ 
+
+--- P27 [Normal] (bold=False) ---
+ 
+
+--- P28 [Normal] (bold=False) ---
+October 2026 
+
+--- P29 [Normal] (bold=False) ---
+ 
+
+--- P30 [Normal] (bold=False) ---
+ 
+
+--- P31 [Normal] (bold=False) ---
+ 
+
+--- P32 [Normal] (bold=False) ---
+ 
+
+--- P33 [Normal] (bold=False) ---
+
+
+--- P34 [Normal] (bold=False) ---
+ 
+
+--- P35 [Normal] (bold=False) ---
+ 
+
+--- P36 [Normal] (bold=True) ---
+Real-Time Network Intrusion and Anomaly Detection
+
+--- P37 [Normal] (bold=True) ---
+Using Machine Learning and Deep Learning
+
+--- P38 [Normal] (bold=False) ---
+ 
+
+--- P39 [Normal] (bold=True) ---
+ADA23CL302 – DATA MINING LABORATORY
+
+--- P40 [Normal] (bold=True) ---
+PROJECT REPORT
+
+--- P41 [Normal] (bold=False) ---
+ 
+
+--- P42 [Normal] (bold=False) ---
+Submitted by 
+
+--- P43 [Normal] (bold=False) ---
+ 
+
+--- P44 [Normal] (bold=False) ---
+Bharathram K - E0324006
+
+--- P45 [Normal] (bold=False) ---
+ 
+
+--- P46 [Normal] (bold=False) ---
+ 
+
+--- P47 [Normal] (bold=False) ---
+ 
+
+--- P48 [Normal] (bold=False) ---
+In partial fulfilment for the award of the degree of 
+
+--- P49 [Normal] (bold=False) ---
+ 
+
+--- P50 [Normal] (bold=False) ---
+BACHELOR OF TECHNOLOGY 
+
+--- P51 [Normal] (bold=False) ---
+ in 
+
+--- P52 [Normal] (bold=False) ---
+ 
+
+--- P53 [Normal] (bold=False) ---
+COMPUTER SCIENCE AND ENGINEERING 
+
+--- P54 [Normal] (bold=False) ---
+ 
+
+--- P55 [Normal] (bold=False) ---
+(Artificial Intelligence and Data Analytics) 
+
+--- P56 [Normal] (bold=False) ---
+ 
+
+--- P57 [Normal] (bold=False) ---
+Sri Ramachandra Faculty of Engineering and Technology 
+
+--- P58 [Normal] (bold=False) ---
+ 
+
+--- P59 [Normal] (bold=False) ---
+Sri Ramachandra Institute of Higher Education and Research, Porur, Chennai -600116 
+
+--- P60 [Normal] (bold=False) ---
+ 
+
+--- P61 [Normal] (bold=False) ---
+ 
+
+--- P62 [Normal] (bold=False) ---
+October 2026 
+
+--- P63 [Normal] (bold=False) ---
+ 
+
+--- P64 [Normal] (bold=False) ---
+ 
+
+--- P65 [Normal] (bold=False) ---
+ 
+
+--- P66 [Normal] (bold=False) ---
+ 
+
+--- P67 [Normal] (bold=False) ---
+ 
+
+--- P68 [Normal] (bold=False) ---
+ 
+
+--- P69 [Normal] (bold=False) ---
+
+
+--- P70 [Normal] (bold=False) ---
+ 
+
+--- P71 [Normal] (bold=False) ---
+BONAFIDE CERTIFICATE 
+
+--- P72 [Normal] (bold=False) ---
+ 
+
+--- P73 [Normal] (bold=False) ---
+ 
+
+--- P74 [Normal] (bold=False) ---
+We, “Bharathram K - E0324006” hereby declare that the Project Report on “Real-Time Network Intrusion and Anomaly Detection Using Machine Learning and Deep Learning” is submitted by us under the guidance of Prof. P. Deepika for ADA23CL302 – Data Mining Laboratory, at Sri Ramachandra Faculty of Engineering and Technology, in partial fulfilment of Semester 5, Third Year B.Tech Degree course in the Department of Computer Science and Engineering during the academic year 2026-2027.
+
+--- P75 [Normal] (bold=False) ---
+ 
+
+--- P76 [Normal] (bold=False) ---
+ 
+
+--- P77 [Normal] (bold=False) ---
+Signature of the Supervisor 	 
+
+--- P78 [Normal] (bold=False) ---
+ 
+
+--- P79 [Normal] (bold=False) ---
+ 
+
+--- P80 [Normal] (bold=False) ---
+ 
+
+--- P81 [Normal] (bold=False) ---
+Prof. P. Deepika   
+
+--- P82 [Normal] (bold=False) ---
+ 
+
+--- P83 [Normal] (bold=False) ---
+Assistant Professor, 
+
+--- P84 [Normal] (bold=False) ---
+ 
+
+--- P85 [Normal] (bold=False) ---
+Department of Artificial Intelligence and Data Analytics, Sri Ramachandra Faculty of Engineering and Technology, 
+
+--- P86 [Normal] (bold=False) ---
+SRIHER, Porur, Chennai-600 116. 
+
+--- P87 [Normal] (bold=False) ---
+ 
+
+--- P88 [Normal] (bold=False) ---
+ 
+
+--- P89 [Normal] (bold=False) ---
+Evaluation Date: 
+
+--- P90 [Normal] (bold=False) ---
+ 
+
+--- P91 [Normal] (bold=False) ---
+ 
+
+--- P92 [Normal] (bold=False) ---
+ 
+
+--- P93 [Normal] (bold=False) ---
+ 
+
+--- P94 [Normal] (bold=False) ---
+  INTERNAL EXAMINER 	              EXTERNAL EXAMINER 
+
+--- P95 [Normal] (bold=False) ---
+ 
+
+--- P96 [Normal] (bold=False) ---
+ 
+
+--- P97 [Heading 1] (bold=False) ---
+ACKNOWLEDGEMENT 
+
+--- P98 [Normal] (bold=False) ---
+ 
+
+--- P99 [Normal] (bold=False) ---
+I take this opportunity to express my gratitude to Prof. T. Ragunathan, Dean and Prof. A. Saravanan, Vice Dean, Sri Ramachandra Faculty of Engineering and Technology, SRIHER, for providing all the facilities and academic support to complete this Data Mining Laboratory project successfully.
+I express my sincere gratitude to Dr. A. Sathya, Programme Coordinator, Department of Artificial Intelligence and Data Analytics, SRET, for providing continuous encouragement and infrastructure for carrying out this study.
+I also extend my sincere gratitude to Prof. P. Deepika, our Course Coordinator, whose guidance and insights were vital throughout the implementation of the dual-engine intrusion detection pipeline. Without her continuous guidance and persistent support, this project would not have been a success.
+I am grateful to all the faculty members of the Department of Computer Science and Engineering, my beloved parents, and my fellow classmates for extending their support, which helped overcome challenges during the study.
+
+--- P100 [Normal] (bold=False) ---
+
+
+--- P101 [Normal] (bold=False) ---
+
+
+--- P102 [Normal] (bold=False) ---
+
+
+--- P103 [Normal] (bold=False) ---
+
+
+--- P104 [Normal] (bold=False) ---
+
+
+--- P105 [Heading 1] (bold=True) ---
+TABLE OF CONTENTS 
+
+--- P106 [Normal] (bold=True) ---
+ABSTRACT
+
+--- P107 [Normal] (bold=False) ---
+Modern enterprise networks face diverse cyber threats ranging from massive Distributed Denial of Service (DDoS) assaults to stealthy zero-day exploits, reconnaissance scans, and sophisticated advanced persistent threats (APTs). Traditional signature-based Network Intrusion Detection Systems (NIDS) fail against uncataloged and polymorphic attacks, while naive supervised classifiers suffer from class imbalance and severe alert fatigue. This project presents an end-to-end data mining and machine learning framework for real-time network intrusion and anomaly detection using the benchmark UNSW-NB15 dataset, which contains realistic modern network telemetry encompassing 45 attributes across 9 distinct attack families (Generic, Exploits, Fuzzers, DoS, Reconnaissance, Analysis, Backdoor, Shellcode, and Worms).
+
+--- P108 [Normal] (bold=False) ---
+A rigorous, zero-leakage preprocessing pipeline was developed that performs median imputation for numerical features, constant imputation for missing values, and one-hot encoding on categorical protocols, services, and connection states. The preprocessor is fitted strictly on the training partition, transforming 42 raw telemetry attributes into a 187-dimensional feature space. The project implements and compares a dual-engine detection paradigm: (1) a supervised Random Forest Classifier utilizing 100 decorrelated decision trees with balanced class weighting to detect known attack patterns, and (2) a semi-supervised Deep Learning Autoencoder neural network (D -> 64 -> 32 -> 16 -> 32 -> 64 -> D) trained exclusively on benign network traffic to learn normal communication manifolds and identify novel intrusions based on reconstruction error (MSE) thresholding.
+
+--- P109 [Normal] (bold=False) ---
+Quantitative evaluation on the holdout benchmark test set demonstrated that the Supervised Random Forest achieved an exceptional F1-score of 0.9150 (Recall: 97.75%, Precision: 86.00%, ROC-AUC: 0.9816, PR-AUC: 0.9860). The Deep Autoencoder, trained without prior exposure to attack signatures, achieved a high normal traffic specificity of 94.08% with a false positive rate of only 5.92% (ROC-AUC: 0.7810), providing a crucial complementary zero-day defense filter. The system explains the Accuracy Paradox in cybersecurity and delivers a responsive Flask-based Security Operations Center (SOC) web application featuring batch CSV prediction, threat consensus alerting (NORMAL, SUSPICIOUS, CRITICAL INTRUSION), and a dataset stream replay simulation engine.
+
+--- P110 [Normal] (bold=False) ---
+
+
+--- P111 [Normal] (bold=False) ---
+ 
+
+--- P112 [Normal] (bold=False) ---
+ 
+
+--- P113 [Normal] (bold=True) ---
+CHAPTER 1
+
+--- P114 [Normal] (bold=True) ---
+INTRODUCTION
+
+--- P115 [Heading 2] (bold=True) ---
+1.1 Problem Statement
+
+--- P116 [Normal] (bold=False) ---
+Enterprise computer networks are the backbone of modern commercial, healthcare, and governmental infrastructure. However, the proliferation of sophisticated cyber threats—such as polymorphic malware, automated botnets, zero-day exploits, and targeted data exfiltration—poses an existential challenge to network security. Traditional Network Intrusion Detection Systems (NIDS) rely heavily on signature-matching engines (e.g., Snort, Suricata). This legacy approach exhibits critical operational deficiencies:
+
+--- P117 [Normal] (bold=False) ---
+Inability to Detect Zero-Day and Evolving Attacks: Signature-based systems can only recognize previously cataloged threat rules. Attackers easily bypass signatures via packet fragmentation, protocol obfuscation, or minor code mutation.
+
+--- P118 [Normal] (bold=False) ---
+High Maintenance and Manual Rule Engineering: Human analysts must continually write and tune thousands of rigid rules, resulting in an unsustainable administrative burden.
+
+--- P119 [Normal] (bold=False) ---
+The Class Imbalance Problem and SOC Alert Fatigue: In real-world network traffic, over 95% to 99% of communication flows are benign. Conventional anomaly detectors trigger massive volumes of false alarms (False Positives), causing Security Operations Center (SOC) analysts to suffer alert fatigue and overlook genuine breaches.
+
+--- P120 [Normal] (bold=False) ---
+Limitations of Purely Supervised Machine Learning: While supervised classifiers achieve high accuracy on known attack signatures, they have severe blind spots when confronted with entirely novel attack families that were absent from the training set.
+
+--- P121 [Normal] (bold=False) ---
+The problem addressed in this project is the design, implementation, and rigorous evaluation of a data-driven Network Intrusion and Anomaly Detection system. The system combines a Supervised Random Forest Classifier with an Unsupervised/Semi-Supervised Deep Learning Autoencoder to detect both known threats and statistical anomalies with high precision, low false alarm rates, and reproducible deployment through a lightweight web dashboard.
+
+--- P122 [Heading 2] (bold=True) ---
+1.2 Motivation
+
+--- P123 [Normal] (bold=False) ---
+Recent breakthroughs in machine learning and deep learning offer powerful techniques to automate cyber defense. By modeling the underlying statistical patterns of network flow attributes—such as packet timing, byte distributions, TCP state flags, and connection velocity—machine learning models can distinguish between legitimate communication and malicious intrusions.
+
+--- P124 [Normal] (bold=False) ---
+The UNSW-NB15 benchmark dataset provides an ideal academic testbed for this research. Unlike legacy benchmarks like KDD99, UNSW-NB15 reflects contemporary network protocols and sophisticated attack mechanisms. Working with this benchmark exercises core data mining competencies across the entire Knowledge Discovery in Databases (KDD) workflow:
+
+--- P125 [Normal] (bold=False) ---
+Data Ingestion and Quality Control: Handling large-scale network telemetry, eliminating missing and infinite values, and preventing data leakage by fitting preprocessing components exclusively on training partitions.
+
+--- P126 [Normal] (bold=False) ---
+Exploratory Data Mining: Analyzing packet length distributions, connection rates, protocol frequencies, and attack category imbalances.
+
+--- P127 [Normal] (bold=False) ---
+Dual-Engine Synergy: Combining the high recall of Supervised Random Forest with the novel-threat detection capabilities of a Deep Autoencoder trained solely on normal traffic.
+
+--- P128 [Normal] (bold=False) ---
+Rigorous Metric Evaluation: Moving beyond misleading accuracy metrics to evaluate Precision, Recall, F1-Score, Specificity, FPR, ROC-AUC, and PR-AUC, with detailed explanations of class imbalance.
+
+--- P129 [Normal] (bold=False) ---
+Real-Time SOC Deployment: Developing an interactive web dashboard that allows analysts to inspect dataset summaries, score batch CSV captures, and execute streaming replay simulations.
+
+--- P130 [Heading 2] (bold=True) ---
+1.3 Objectives
+
+--- P131 [Normal] (bold=False) ---
+The primary objective of this project is to build, evaluate, and deploy an end-to-end Network Intrusion and Anomaly Detection System using the UNSW-NB15 dataset and Python. The specific project milestones are:
+
+--- P132 [Normal] (bold=False) ---
+1. Dataset Acquisition and Stratification: Ingest official UNSW-NB15 train/test splits and construct stratified sample subsets for laptop execution.
+
+--- P133 [Normal] (bold=False) ---
+2. Data Cleaning and Inspection: Clean string whitespaces, convert +/- inf to NaN, impute numerical and categorical gaps, and inspect column cardinality.
+
+--- P134 [Normal] (bold=False) ---
+3. Zero-Leakage Preprocessing: Implement a preprocessor that fits scalers, imputers, and one-hot encoders strictly on training data.
+
+--- P135 [Normal] (bold=False) ---
+4. Supervised Random Forest Training: Train a Random Forest classifier with 100 trees and balanced class weights to identify known attack flows.
+
+--- P136 [Normal] (bold=False) ---
+5. Semi-Supervised Deep Autoencoder Training: Construct a PyTorch bottleneck autoencoder trained strictly on normal traffic flows (label = 0).
+
+--- P137 [Normal] (bold=False) ---
+6. Anomaly Threshold Calibration: Calibrate the reconstruction error MSE threshold using the 95th percentile of normal flow errors.
+
+--- P138 [Normal] (bold=False) ---
+7. Comprehensive Metric Evaluation: Evaluate models across Precision, Recall, F1, Specificity, FPR, ROC-AUC, and PR-AUC, and explain class imbalance.
+
+--- P139 [Normal] (bold=False) ---
+8. Dual-Engine Threat Consensus: Establish a threat hierarchy: NORMAL (both cleared), SUSPICIOUS (single flag), CRITICAL INTRUSION (both triggered).
+
+--- P140 [Normal] (bold=False) ---
+9. Responsive SOC Dashboard Deployment: Deliver a web application with model analytics, batch CSV prediction, and dataset stream replay simulation.
+
+--- P141 [Normal] (bold=False) ---
+
+
+--- P142 [Normal] (bold=True) ---
+CHAPTER 2
+
+--- P143 [Normal] (bold=True) ---
+DATASET (UNSW-NB15)
+
+--- P144 [Heading 2] (bold=True) ---
+2.1 Dataset Source
+
+--- P145 [Normal] (bold=False) ---
+The experiments in this project utilize the UNSW-NB15 dataset, created by the Cyber Range Lab of the Australian Centre for Cyber Security (ACCS) at the University of New South Wales (UNSW Canberra). Published by Moustafa and Slay (IEEE MilCIS 2015), the dataset was generated using the IXIA PerfectStorm tool to simulate a hybrid of real benign modern background network traffic and synthesized contemporary cyber attacks. The raw data encompasses 100 GB of network traffic in PCAP format, from which 49 features were extracted using Bro-IDS and Argus network analytical tools.
+
+--- P146 [Normal] (bold=False) ---
+The standard benchmark split partitions the flows into designated training and testing CSV files. To enable rapid development on typical student laptops without sacrificing statistical validity, a stratified sampling utility was implemented that extracts 15,000 training flows and 5,000 testing flows while exactly preserving the binary class balance and attack category distributions.
+
+--- P147 [Normal] (bold=False) ---
+ 
+
+--- P148 [Heading 2] (bold=True) ---
+2.2 Number of Records
+
+--- P149 [Normal] (bold=False) ---
+The full UNSW-NB15 benchmark contains 257,673 total network records: 175,341 records in the training set and 82,332 records in the testing set. In the full training set, 56,000 records represent normal traffic (31.94%) and 119,341 represent attacks (68.06%). In the testing set, 37,000 records are normal (44.94%) and 45,332 are attacks (55.06%). The stratified laptop sample maintains these exact proportions: 15,000 train records (4,791 normal, 10,209 attack) and 5,000 test records (2,247 normal, 2,753 attack). Table 2.1 summarizes the dataset partitions.
+
+--- P150 [Normal] (bold=False) ---
+Table 2.1: UNSW-NB15 Dataset Split Summary and Class Distribution
+
+--- P151 [Normal] (bold=False) ---
+The density of the images is very high. The number of products per image has a mean of 147.3 and a median of 135, with a minimum of 65 and a maximum of 501. The mean is higher than the median because a few very crowded images pull the average upward. Even the sparsest image contains 65 products, so every sample is a challenging, crowded scene. 
+
+--- P152 [Heading 2] (bold=True) ---
+2.3 Attributes
+
+--- P153 [Normal] (bold=False) ---
+Each record in the dataset is defined by 45 features spanning flow duration, protocols, packet sizes, transmission rates, TCP connection parameters, and window sizes. Table 2.2 lists key attributes and their physical telemetry specifications.
+
+--- P154 [Normal] (bold=False) ---
+Categorical Attributes: The dataset contains three primary nominal features: 'proto' (131 transaction protocols such as TCP, UDP, ARP, OSPF), 'service' (13 application services including http, dns, ftp, smtp, ssh), and 'state' (connection states such as FIN, INT, CON, REQ, RST).
+
+--- P155 [Normal] (bold=False) ---
+Numerical Flow Attributes: Quantitative flow metrics include duration (dur), source/destination bytes (sbytes, dbytes), packet rates (rate), Time to Live (sttl, dttl), jitter (sjit, djit), TCP window size (swin, dwin), and connection frequency counters (ct_srv_src, ct_dst_ltm).
+
+--- P156 [Normal] (bold=False) ---
+Table 2.2: Selected UNSW-NB15 Flow Attributes and Telemetry Specifications
+
+--- P157 [Normal] (bold=False) ---
+ 
+
+--- P158 [Normal] (bold=False) ---
+ 
+
+--- P159 [Heading 2] (bold=True) ---
+2.4 Target Variable & Attack Categories
+
+--- P160 [Normal] (bold=False) ---
+The target variable for binary intrusion detection is 'label', where 0 designates legitimate Normal network traffic and 1 designates malicious Attack traffic. In addition to the binary target, the dataset provides an 'attack_cat' attribute classifying intrusions into 9 distinct modern attack families: Generic (cryptographic/algorithmic generic attacks), Exploits (buffer overflows, security vulnerabilities), Fuzzers (randomized protocol fuzzing), DoS (denial-of-service volumetric floods), Reconnaissance (port scans, ping sweeps), Analysis (web app scans, HTML injections), Backdoors (stealthy remote access trojans), Shellcode (executable payloads), and Worms (self-propagating network malware). To prevent target leakage, 'attack_cat' is dropped from feature matrices and used strictly for post-hoc diagnostic evaluation.
+
+--- P161 [Normal] (bold=False) ---
+Class label. There is only one class, called “product”, which has index 0. Every one of the 11,787 annotations belongs to this class, so there is no class imbalance, which is a common problem in classification tasks. Everything else in the image, such as shelf edges, price tags and the background, is treated as the background class. The model therefore performs binary classification for each candidate region, deciding whether it contains a product or not. Bounding box. For a region classified as a product, the model must also predict its location, which is a regression task. The box is described by four values normalized between 0 and 1: the x-coordinate of the centre, the y-coordinate of the centre, the width and the height. The labels are stored in one text file per image, with one line per product in the form class_id x_centre y_centre width height. For example, the line 0 0.104167 0.223380 0.070767 0.091601 describes a product centred at about 10.4% of the image width and 22.3% of the image height, which is about 7.1% as wide and 9.2% as tall as the image. 
+
+--- P162 [Normal] (bold=False) ---
+ 
+
+--- P163 [Normal] (bold=True) ---
+CHAPTER 3
+
+--- P164 [Normal] (bold=True) ---
+DATA PREPROCESSING
+
+--- P165 [Heading 2] (bold=True) ---
+3.1 Missing & Infinite Value Handling
+
+--- P166 [Normal] (bold=False) ---
+Real-world network monitoring frequently encounters incomplete captures, packet loss, or numerical overflow. The ingestion module in data_loader.py enforces systematic hygiene:
+
+--- P167 [Normal] (bold=False) ---
+Infinite Value Rectification: Network flow rates or loads that involve division by near-zero duration can generate positive or negative infinity (inf, -inf). All infinite numerical entries are replaced with NaN before imputation.
+
+--- P168 [Normal] (bold=False) ---
+Numerical Median Imputation: Missing numerical attributes are imputed using the median of each feature, calculated strictly from the training set to remain resilient against extreme power-law outliers.
+
+--- P169 [Normal] (bold=False) ---
+Categorical Missing Imputation: In nominal attributes (such as 'service' where '-' designates no application service identified), empty strings and literal 'nan' strings are replaced with standard missing markers ('-').
+
+--- P170 [Normal] (bold=False) ---
+UTF-8 BOM Cleansing: The CSV files contain UTF-8 Byte Order Marks (﻿) which can corrupt column names. The loader parses files using 'utf-8-sig' to guarantee exact attribute indexing.
+
+--- P171 [Normal] (bold=False) ---
+
+
+--- P172 [Heading 2] (bold=True) ---
+3.2 Data Cleaning & Leakage Prevention
+
+--- P173 [Normal] (bold=False) ---
+Data leakage occurs when information from outside the training partition inadvertently influences feature transformations or model training. The DataPreprocessor class enforces strict separation:
+
+--- P174 [Normal] (bold=False) ---
+Target and Identifier Exclusion: The sequential 'id' counter and the outcome proxy 'attack_cat' are immediately decoupled from the feature matrix X, eliminating any possibility of target leakage.
+
+--- P175 [Normal] (bold=False) ---
+Whitespace Stripping: Leading and trailing spaces across all nominal cell values and column headers are trimmed to prevent artificial category fragmentation.
+
+--- P176 [Normal] (bold=False) ---
+Fit on Train Only: All scaler parameters (mean, variance) and one-hot encoding categories are fitted strictly on the training set. Testing data and streaming inputs are exclusively transformed using frozen parameters.
+
+--- P177 [Normal] (bold=False) ---
+Unseen Category Resilience: In real network streams, rare or novel protocols may appear. The preprocessor configures OneHotEncoder(handle_unknown='ignore', sparse_output=False), mapping unseen categories to zero vectors without throwing exceptions.
+
+--- P178 [Normal] (bold=False) ---
+
+
+--- P179 [Normal] (bold=False) ---
+
+
+--- P180 [Normal] (bold=False) ---
+File Format Check: Only .jpg, .jpeg and .png files are accepted. Other extensions are flagged. 
+
+--- P181 [Normal] (bold=False) ---
+Line Format Check: Every label line must contain exactly five values (class, x-centre, y-centre, width, height) and all values must be numeric. 
+
+--- P182 [Normal] (bold=False) ---
+Duplicate Box Check: Identical boxes within the same image, compared at four decimal places, are flagged. 
+
+--- P183 [Normal] (bold=False) ---
+Cross-Split Leakage Check: Image hashes are compared across the train, validation and test splits. A shared hash means the same image appears in two splits, which would inflate the evaluation results, so any such case triggers a warning status. 
+
+--- P184 [Heading 2] (bold=True) ---
+3.3 Feature Transformation & Categorical Encoding
+
+--- P185 [Normal] (bold=False) ---
+Nominal network features ('proto', 'service', 'state') cannot be consumed directly by mathematical optimization algorithms. The preprocessor performs One-Hot Encoding on categorical attributes, transforming the 3 nominal variables into 148 binary columns (reflecting observed protocol types, connection states, and application services). Combined with the 39 numerical features, the resulting transformed input feature vector dimension is 187 features: X in R^{N x 187}.
+
+--- P186 [Normal] (bold=False) ---
+
+
+--- P187 [Normal] (bold=False) ---
+
+
+--- P188 [Normal] (bold=False) ---
+
+
+--- P189 [Normal] (bold=False) ---
+
+
+--- P190 [Normal] (bold=False) ---
+
+
+--- P191 [Normal] (bold=False) ---
+
+
+--- P192 [Normal] (bold=False) ---
+
+
+--- P193 [Normal] (bold=False) ---
+
+
+--- P194 [Heading 2] (bold=True) ---
+3.4 Normalization & Split Partitioning
+
+--- P195 [Normal] (bold=False) ---
+Numerical flow attributes span drastically different scales. For instance, connection duration (dur) ranges from microseconds to seconds (0.0 to 60.0), while byte counters (sbytes, dbytes) exceed 14 megabytes. Without normalization, neural network gradient descent fails and distance-based losses are distorted. StandardScaler is fitted strictly on the training partition: z = (x - mu_train) / sigma_train. The project preserves the official benchmark train/test split, ensuring zero overlap between training and testing records, and enforces a fixed seed (RANDOM_SEED = 42) across all operations.
+
+--- P196 [Normal] (bold=False) ---
+
+
+--- P197 [Normal] (bold=False) ---
+
+
+--- P198 [Normal] (bold=False) ---
+
+
+--- P199 [Normal] (bold=False) ---
+
+
+--- P200 [Normal] (bold=False) ---
+
+
+--- P201 [Normal] (bold=False) ---
+
+
+--- P202 [Normal] (bold=False) ---
+
+
+--- P203 [Normal] (bold=False) ---
+
+
+--- P204 [Normal] (bold=False) ---
+
+
+--- P205 [Normal] (bold=False) ---
+
+
+--- P206 [Normal] (bold=False) ---
+
+
+--- P207 [Normal] (bold=False) ---
+
+
+--- P208 [Normal] (bold=False) ---
+
+
+--- P209 [Normal] (bold=False) ---
+
+
+--- P210 [Normal] (bold=True) ---
+CHAPTER 4
+
+--- P211 [Normal] (bold=True) ---
+DATA MINING TECHNIQUES
+
+--- P212 [Heading 2] (bold=True) ---
+4.1 Data Mining Process (KDD Framework)
+
+--- P213 [Normal] (bold=False) ---
+The project follows the established Knowledge Discovery in Databases (KDD) framework, mapping each theoretical data mining phase to a concrete software module in the detection pipeline. Table 4.1 outlines these stages.
+
+--- P214 [Normal] (bold=False) ---
+Table 4.1: Stages of the Knowledge Discovery in Databases (KDD) Process in NIDS
+
+--- P215 [Normal] (bold=False) ---
+ 
+
+--- P216 [Normal] (bold=False) ---
+Each stage is implemented as a separate script, so the process can be repeated from raw data to final knowledge. 
+
+--- P217 [Normal] (bold=False) ---
+ 
+
+--- P218 [Heading 2] (bold=True) ---
+4.2 Exploratory Data Mining & Feature Analysis
+
+--- P219 [Normal] (bold=False) ---
+Exploratory feature analysis reveals critical properties of network flows. The distributions of flow duration and byte counts are heavily right-skewed (power-law distribution), where the vast majority of connections are short-lived transactions (e.g., DNS queries), while massive file transfers generate extreme tail outliers. Attack categories exhibit significant behavioral signatures: DoS flows produce abnormal packet rates with minimal payload duration, while Exploits and Shellcode display elevated connection counts to destination ports (ct_src_dport_ltm). Protocol distribution analysis shows TCP and UDP dominating over 95% of flows, while specialized protocols (unas, ospf, arp) appear in minority subsets.
+
+--- P220 [Normal] (bold=False) ---
+
+
+--- P221 [Normal] (bold=False) ---
+
+
+--- P222 [Normal] (bold=False) ---
+
+
+--- P223 [Normal] (bold=False) ---
+
+
+--- P224 [Normal] (bold=False) ---
+
+
+--- P225 [Normal] (bold=False) ---
+
+
+--- P226 [Normal] (bold=False) ---
+
+
+--- P227 [Normal] (bold=False) ---
+
+
+--- P228 [Normal] (bold=False) ---
+
+
+--- P229 [Normal] (bold=False) ---
+
+
+--- P230 [Normal] (bold=False) ---
+
+
+--- P231 [Normal] (bold=False) ---
+
+
+--- P232 [Heading 2] (bold=True) ---
+4.3 Supervised Classification (Random Forest)
+
+--- P233 [Normal] (bold=False) ---
+The first detection engine is a Supervised Random Forest Classifier. Random Forest is an ensemble learning algorithm that constructs 100 decorrelated decision trees using bootstrap aggregating (bagging) and random feature subspace selection. Tree depth is constrained to max_depth = 15 to prevent overfitting on noisy network artifacts. To mitigate class skew between normal and attack records, the model incorporates balanced class weighting (class_weight='balanced'), automatically adjusting tree weights inversely proportional to class frequencies: w_j = N / (2 * N_j). During inference, the ensemble computes continuous attack probabilities: P(Attack | x) = (1 / T) * sum(P_t(Attack | x)). A classification threshold of 0.5 converts probabilities into binary predictions.
+
+--- P234 [Normal] (bold=False) ---
+
+
+--- P235 [Normal] (bold=False) ---
+
+
+--- P236 [Normal] (bold=False) ---
+
+
+--- P237 [Normal] (bold=False) ---
+
+
+--- P238 [Heading 2] (bold=False) ---
+
+
+--- P239 [Heading 2] (bold=True) ---
+4.4 Semi-Supervised Anomaly Detection (Deep Autoencoder)
+
+--- P240 [Normal] (bold=False) ---
+Supervised classifiers are blind to novel zero-day attacks that do not match historical training signatures. To address this fundamental limitation, a Semi-Supervised Deep Autoencoder neural network was developed using PyTorch. The Autoencoder is trained EXCLUSIVELY on benign normal traffic (label = 0). The architecture consists of an Encoder compressing the 187-dimensional input into a compact 16-dimensional latent bottleneck (187 -> 64 -> 32 -> 16), followed by a symmetric Decoder reconstructing the flow back to 187 dimensions (16 -> 32 -> 64 -> 187). Each hidden layer utilizes LeakyReLU activations (slope = 0.1) and Batch Normalization. The network optimizes Mean Squared Error (MSE): Loss = (1 / D) * sum((x_i - x_hat_i)^2). Because the network only learns the manifold of benign communication, novel attacks produce elevated reconstruction error. The anomaly threshold tau is calibrated as the 95th percentile of normal training errors.
+
+--- P241 [Normal] (bold=False) ---
+
+
+--- P242 [Normal] (bold=False) ---
+
+
+--- P243 [Normal] (bold=False) ---
+
+
+--- P244 [Normal] (bold=False) ---
+
+
+--- P245 [Normal] (bold=False) ---
+
+
+--- P246 [Normal] (bold=False) ---
+
+
+--- P247 [Normal] (bold=False) ---
+
+
+--- P248 [Normal] (bold=False) ---
+
+
+--- P249 [Heading 2] (bold=True) ---
+4.5 Class Imbalance & Evaluation Measures
+
+--- P250 [Normal] (bold=False) ---
+In cybersecurity data mining, relying solely on overall accuracy is fundamentally flawed due to the Accuracy Paradox. If 99% of network flows are normal, a trivial classifier predicting 'Normal' unconditionally achieves 99% accuracy yet allows 100% of cyber attacks to compromise the network. Moreover, in UNSW-NB15, while aggregate splits are balanced, sub-categories are severely skewed: Worms (<0.1%) and Backdoors (<0.5%) are heavily overshadowed by Generic and Exploits. Models are therefore evaluated across: Precision = TP / (TP + FP) (alert reliability, minimizing false alarms), Recall = TP / (TP + FN) (attack detection rate), F1-Score = 2 * (P * R) / (P + R) (harmonic balance), Specificity = TN / (TN + FP) (benign traffic retention), False Positive Rate = FP / (FP + TN), and Area Under the ROC and PR Curves (ROC-AUC, PR-AUC).
+
+--- P251 [Normal] (bold=False) ---
+
+
+--- P252 [Normal] (bold=False) ---
+
+
+--- P253 [Normal] (bold=False) ---
+
+
+--- P254 [Normal] (bold=False) ---
+
+
+--- P255 [Normal] (bold=False) ---
+
+
+--- P256 [Normal] (bold=False) ---
+
+
+--- P257 [Normal] (bold=False) ---
+ 
+
+--- P258 [Normal] (bold=False) ---
+ 
+
+--- P259 [Normal] (bold=False) ---
+ 
+
+--- P260 [Normal] (bold=False) ---
+ 
+
+--- P261 [Normal] (bold=False) ---
+ 
+
+--- P262 [Normal] (bold=False) ---
+ 
+
+--- P263 [Normal] (bold=True) ---
+CHAPTER 5
+
+--- P264 [Normal] (bold=True) ---
+IMPLEMENTATION
+
+--- P265 [Heading 2] (bold=True) ---
+5.1 Python Development Environment & Tools
+
+--- P266 [Normal] (bold=False) ---
+The intrusion detection pipeline was implemented in Python 3.11 using an enterprise-ready modular architecture. Development and verification were carried out on a standard student laptop workstation. Table 5.1 details the software stack and libraries.
+
+--- P267 [Normal] (bold=False) ---
+Table 5.1: Software Development Stack and Machine Learning Tools
+
+--- P268 [Normal] (bold=False) ---
+ 
+
+--- P269 [Normal] (bold=False) ---
+An installation verification script checks the Python version, required libraries, CUDA availability, model weights, dataset folders, database tables and write access to the output folders before the system is launched. 
+
+--- P270 [Heading 2] (bold=True) ---
+5.2 Implementation Pipeline & Architecture
+
+--- P271 [Normal] (bold=False) ---
+The project follows a clean decoupled structure: src/config.py centralizes file paths and hyperparameters; src/data_loader.py handles dataset ingestion and inf/nan sanitization; src/preprocessor.py encapsulates zero-leakage scaling and encoding; src/models/ houses the Random Forest and PyTorch Autoencoder classes; src/evaluation.py computes comprehensive metrics; train.py orchestrates training and model artifact serialization; and app.py delivers the Flask SOC dashboard. Figure 5.1 illustrates the system architecture.
+
+--- P272 [Normal] (bold=False) ---
+ 
+
+--- P273 [Normal] (bold=False) ---
+Figure 5.1: End-to-End Real-Time Network Intrusion & Anomaly Detection Pipeline Architecture
+
+--- P274 [Normal] (bold=False) ---
+ 
+
+--- P275 [Normal] (bold=False) ---
+
+
+--- P276 [Normal] (bold=False) ---
+
+
+--- P277 [Normal] (bold=False) ---
+
+
+--- P278 [Normal] (bold=False) ---
+
+
+--- P279 [Normal] (bold=False) ---
+
+
+--- P280 [Normal] (bold=False) ---
+
+
+--- P281 [Normal] (bold=False) ---
+
+
+--- P282 [Heading 2] (bold=True) ---
+5.3 Parameters & Configurations
+
+--- P283 [Normal] (bold=False) ---
+Table 5.2 summarizes the experimental hyperparameter configurations utilized across the preprocessing, Random Forest, and Deep Autoencoder models.
+
+--- P284 [Normal] (bold=False) ---
+Table 5.2: Experimental Hyperparameter Configurations
+
+--- P285 [Normal] (bold=False) ---
+ 
+
+--- P286 [Normal] (bold=False) ---
+ 
+
+--- P287 [Normal] (bold=False) ---
+
+
+--- P288 [Normal] (bold=False) ---
+
+
+--- P289 [Normal] (bold=False) ---
+
+
+--- P290 [Normal] (bold=True) ---
+CHAPTER 6
+
+--- P291 [Normal] (bold=True) ---
+RESULTS
+
+--- P292 [Heading 2] (bold=True) ---
+6.1 Tables
+
+--- P293 [Normal] (bold=False) ---
+Model training was executed using the stratified UNSW-NB15 dataset. The Random Forest classifier trained in 0.62 seconds, while the PyTorch Autoencoder trained across 10 epochs on 4,791 normal flows in 9.4 seconds. Table 6.1 presents the training loss progression of the Autoencoder across epochs, showing rapid convergence from 0.2364 to 0.0360 MSE.
+
+--- P294 [Normal] (bold=False) ---
+Table 6.1: Deep Autoencoder Training Progression across Epochs
+
+--- P295 [Normal] (bold=False) ---
+Threshold sensitivity analysis was performed on holdout validation data to identify the optimal anomaly cutoff point. Table 6.2 illustrates the threshold sweep across percentiles, confirming that the 95th percentile (MSE = 0.0865) provides the ideal balance between high normal traffic retention (94.08% specificity) and strong alert precision (83.50%).
+
+--- P296 [Normal] (bold=False) ---
+Table 6.2: Autoencoder Anomaly Threshold Sweep and Detection Metrics
+
+--- P297 [Normal] (bold=False) ---
+ 
+
+--- P298 [Heading 2] (bold=True) ---
+6.2 Graphs
+
+--- P299 [Normal] (bold=False) ---
+Figure 6.1 displays the comparative Receiver Operating Characteristic (ROC) curves on the holdout test set. The Supervised Random Forest achieves an outstanding AUC of 0.9816, demonstrating near-perfect discriminative capability. The Semi-Supervised Autoencoder achieves an AUC of 0.7810, reflecting strong anomaly separation despite receiving zero attack training samples.
+
+--- P300 [Normal] (bold=False) ---
+ 
+
+--- P301 [Normal] (bold=False) ---
+Figure 6.1: Receiver Operating Characteristic (ROC) Curves Comparison
+
+--- P302 [Normal] (bold=False) ---
+ 
+
+--- P303 [Normal] (bold=False) ---
+During the first three epochs the validation scores stayed low and flat, with mAP@50 between 0.04 and 0.06. This coincides with the learning-rate warm-up, during which the learning rate rises gradually from 0.0006 to about 0.0012. The model was still replacing the 80-class COCO output layer with a single “product” class. In epochs 4 and 5 the classification loss fell sharply, from 4.73 to 2.13, and validation mAP@50 rose from 0.055 to 0.425, which is an increase of about 670% from the first epoch.  
+
+--- P304 [Normal] (bold=False) ---
+Figure 6.2 shows the Autoencoder training reconstruction error curve declining rapidly over 10 epochs alongside the calibrated 95th percentile anomaly cutoff threshold (0.0865). Figure 6.3 displays the confusion matrices for both models on the 5,000 holdout test records.
+
+--- P305 [Normal] (bold=False) ---
+ 
+
+--- P306 [Normal] (bold=False) ---
+Figure 6.2: Autoencoder Convergence and Anomaly Cutoff Calibration
+
+--- P307 [Heading 2] (bold=True) ---
+6.3 Evaluation Metrics Analysis
+
+--- P308 [Normal] (bold=False) ---
+Supervised Random Forest Analysis: The Random Forest detected 2,691 out of 2,753 attacks in the test partition, yielding a remarkable Recall (Detection Rate) of 97.75% and Precision of 86.00% (F1-score: 0.9150). False Negatives were exceptionally low (only 62 missed attacks out of 2,753). Gini feature importances revealed that Time to Live (sttl), state-dependent TTL (ct_state_ttl), source/dest bytes (sbytes, dbytes), and packet rates (rate) were the most decisive intrusion indicators.
+
+--- P309 [Normal] (bold=False) ---
+Deep Autoencoder Anomaly Analysis: The Autoencoder correctly classified 2,114 out of 2,247 benign flows as normal, achieving a Specificity of 94.08% and an ultra-low False Positive Rate of only 5.92% (133 false alarms out of 2,247 benign flows). Alert precision was 83.50%. Because the model was trained exclusively on normal traffic, it serves as an effective first-line filter for uncataloged anomalies.
+
+--- P310 [Normal] (bold=False) ---
+
+
+--- P311 [Normal] (bold=False) ---
+
+
+--- P312 [Normal] (bold=False) ---
+
+
+--- P313 [Normal] (bold=False) ---
+ 
+
+--- P314 [Normal] (bold=False) ---
+Figure 6.3: Dual-Engine Confusion Matrices Comparison on Holdout Test Partition
+
+--- P315 [Normal] (bold=True) ---
+CHAPTER 7
+
+--- P316 [Normal] (bold=True) ---
+COMPARISON AND DISCUSSION
+
+--- P317 [Heading 2] (bold=True) ---
+7.1 Algorithm Comparison
+
+--- P318 [Normal] (bold=False) ---
+Table 7.1 provides a side-by-side comparison between the Supervised Random Forest Classifier and the Semi-Supervised Deep Autoencoder. The empirical results confirm that neither model should operate in isolation; rather, their synergy creates a defense-in-depth architecture.
+
+--- P319 [Normal] (bold=False) ---
+Table 7.1: Comprehensive Comparative Evaluation Matrix (Random Forest vs. Deep Autoencoder)
+
+--- P320 [Normal] (bold=False) ---
+
+
+--- P321 [Normal] (bold=False) ---
+Dual-Engine Threat Consensus Hierarchy: When both engines agree that a flow is malicious (RF = 1 and AE = 1), the event is escalated as CRITICAL INTRUSION with maximum analyst confidence. When only one engine triggers (e.g., RF = 1 but AE = 0, or AE = 1 on an uncataloged flow), it is classified as SUSPICIOUS / ELEVATED, warranting secondary inspection. When both engines clear the flow, it is tagged as NORMAL.
+
+--- P322 [Heading 2] (bold=True) ---
+7.2 Advantages
+
+--- P323 [Normal] (bold=False) ---
+1. Zero Data Leakage Assurance: Strict fit-on-train preprocessor ensures that no test or streaming telemetry skews scaling or encoding parameters.
+
+--- P324 [Normal] (bold=False) ---
+2. Defense-in-Depth Consensus: Combining supervised pattern matching with unsupervised anomaly reconstruction mitigates individual engine weaknesses.
+
+--- P325 [Normal] (bold=False) ---
+3. Ultra-Low False Alarm Rate: The Deep Autoencoder restricts false positives to 5.92%, mitigating SOC alert fatigue.
+
+--- P326 [Normal] (bold=False) ---
+4. Fast Laptop Execution: Optimized stratified sampling and batch training enable complete execution in under 15 seconds on a consumer laptop.
+
+--- P327 [Normal] (bold=False) ---
+5. Interactive SOC Deployment: Responsive Flask dashboard provides batch CSV scoring, live dataset stream replay, and CSV export.
+
+--- P328 [Normal] (bold=False) ---
+
+
+--- P329 [Heading 2] (bold=True) ---
+7.3 Limitations
+
+--- P330 [Normal] (bold=False) ---
+1. Offline Dataset Replay vs. Live Kernel Sniffing: The current implementation replays recorded UNSW-NB15 benchmark records rather than capturing live raw Ethernet packets.
+
+--- P331 [Normal] (bold=False) ---
+2. Autoencoder Recall on Subtle Injections: Low-volume attacks that mimic normal packet headers (e.g., stealthy SQL injections or slow recon) produce smaller reconstruction errors and can fall below the 95th percentile cutoff.
+
+--- P332 [Normal] (bold=False) ---
+3. Feature Extraction Latency: Converting raw PCAP packet streams into aggregate flow features requires session reassembly and state tracking.
+
+--- P333 [Normal] (bold=True) ---
+CHAPTER 8
+
+--- P334 [Normal] (bold=True) ---
+CONCLUSION AND FUTURE SCOPE
+
+--- P335 [Heading 2] (bold=True) ---
+8.1 Conclusion
+
+--- P336 [Normal] (bold=False) ---
+This project successfully developed, evaluated, and deployed an end-to-end Network Intrusion and Anomaly Detection system using Python, PyTorch, Scikit-Learn, and the modern UNSW-NB15 benchmark dataset. Following the Knowledge Discovery in Databases (KDD) methodology, raw network telemetry was cleaned, sanitized, and transformed with strict zero-leakage guarantees into a 187-dimensional feature space. The Supervised Random Forest classifier demonstrated exceptional threat detection (Recall: 97.75%, Precision: 86.00%, F1: 0.9150, ROC-AUC: 0.9816). Concurrently, the Semi-Supervised Deep Autoencoder proved highly effective at learning normal traffic representations without prior attack knowledge, maintaining a 94.08% normal specificity and a low 5.92% false positive rate. The system was operationalized as a responsive Flask Security Operations Center (SOC) web application supporting batch CSV prediction and configurable dataset stream replay simulation.
+
+--- P337 [Heading 2] (bold=True) ---
+8.2 Future Scope
+
+--- P338 [Normal] (bold=False) ---
+1. Live Packet Ingestion Engine: Integrate Scapy or DPDK (Data Plane Development Kit) with raw socket listeners to extract UNSW-NB15 telemetry directly from live NIC interfaces in real time.
+
+--- P339 [Normal] (bold=False) ---
+2. Granular Multi-Class Intrusion Classification: Extend the supervised classifier from binary detection to multi-class identification across all 9 attack categories (DoS, Worms, Backdoors, Exploits, etc.).
+
+--- P340 [Normal] (bold=False) ---
+3. Dynamic Anomaly Threshold Adaptation: Implement Reinforcement Learning or sliding-window Kalman filtering to adjust the Autoencoder anomaly cutoff dynamically in response to diurnal traffic shifts.
+
+--- P341 [Normal] (bold=False) ---
+4. Deep Sequence Modeling: Investigate Temporal Convolutional Networks (TCN) or LSTM Autoencoders to capture sequential packet dependencies across consecutive flow windows.
+
+--- P342 [Normal] (bold=False) ---
+5. Automated SIEM Integration: Integrate webhook notifications and syslog forwarding (CEF/JSON) into enterprise SIEM platforms such as Splunk, Elastic Security, and Microsoft Sentinel.
+
+--- P343 [Normal] (bold=False) ---
+
+
+--- P344 [Normal] (bold=False) ---
+
+
+--- P345 [Normal] (bold=True) ---
+REFERENCES
+
+--- P346 [Normal] (bold=False) ---
+[1] N. Moustafa and J. Slay, “UNSW-NB15: a comprehensive data set for network intrusion detection systems (UNSW-NB15 network data set),” in Proc. IEEE Military Communications and Information Systems Conference (MilCIS), Canberra, Australia, 2015, pp. 1–6.
+
+--- P347 [Normal] (bold=False) ---
+[2] N. Moustafa and J. Slay, “The evaluation of Network Anomaly Detection Systems: Statistical analysis of the UNSW-NB15 data set and the comparison with the KDD99 data set,” Information Security Journal: A Global Perspective, vol. 25, no. 1–3, pp. 18–31, 2016.
+
+--- P348 [Normal] (bold=False) ---
+[3] L. Breiman, “Random Forests,” Machine Learning, vol. 45, no. 1, pp. 5–32, 2001.
+
+--- P349 [Normal] (bold=False) ---
+[4] G. E. Hinton and R. R. Salakhutdinov, “Reducing the dimensionality of data with neural networks,” Science, vol. 313, no. 5786, pp. 504–507, 2006.
+
+--- P350 [Normal] (bold=False) ---
+[5] U. Fayyad, G. Piatetsky-Shapiro, and P. Smyth, “From data mining to knowledge discovery in databases,” AI Magazine, vol. 17, no. 3, pp. 37–54, 1996.
+
+--- P351 [Normal] (bold=False) ---
+[6] J. Han, M. Kamber, and J. Pei, Data Mining: Concepts and Techniques, 3rd ed. Burlington, MA, USA: Morgan Kaufmann, 2012.
+
+--- P352 [Normal] (bold=False) ---
+[7] R. Sommer and V. Paxson, “Outside the closed world: On using machine learning for network intrusion detection,” in Proc. IEEE Symposium on Security and Privacy (S&P), Oakland, CA, USA, 2010, pp. 305–316.
+
+--- P353 [Normal] (bold=False) ---
+[8] F. Pedregosa et al., “Scikit-learn: Machine learning in Python,” Journal of Machine Learning Research, vol. 12, pp. 2825–2830, 2011.
+
+--- P354 [Normal] (bold=False) ---
+[9] A. Paszke et al., “PyTorch: An imperative style, high-performance deep learning library,” in Advances in Neural Information Processing Systems (NeurIPS), vol. 32, 2019.
+
+--- P355 [Normal] (bold=False) ---
+[10] A. L. Buczak and E. Guven, “A survey of data mining and machine learning methods for cyber security intrusion detection,” IEEE Communications Surveys & Tutorials, vol. 18, no. 2, pp. 1153–1176, 2016.
+
+--- P356 [Normal] (bold=False) ---
+[11] M. Ring, S. Wunderlich, D. Scheuring, D. Landes, and A. Hotho, “A survey of network-based intrusion detection data sets,” Computers & Security, vol. 86, pp. 147–167, 2019.
+
